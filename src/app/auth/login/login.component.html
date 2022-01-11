@@ -1,0 +1,18 @@
+<div class="login">
+    <div class="login__container">
+        <div class="login__form">
+            <form [formGroup]="form">
+                <h1 class="login__title">Marvel Comics</h1>
+                <mat-form-field class="login__formfield" appearance="fill">
+                    <mat-label>Public KEY</mat-label>
+                    <input matInput formControlName="publickey" placeholder="cole aqui sua chave pública" >
+                </mat-form-field>
+                <mat-form-field class="login__formfield" appearance="fill">
+                    <mat-label>Private KEY</mat-label>
+                    <input matInput formControlName="privatekey" placeholder="cole aqui sua chave privada" >
+                </mat-form-field>
+                <button mat-raised-button class="login__button" (click)="logIn()" color="primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
