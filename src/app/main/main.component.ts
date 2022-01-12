@@ -8,10 +8,9 @@ import { CharactersService } from '../core/http/characters.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private characterService: CharactersService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.characterService.getAllCharacters().subscribe()
   }
 
 }

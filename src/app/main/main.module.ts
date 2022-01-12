@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
-import { AuthInterceptor } from '../core/interceptors/auth.interceptor';
+import { CharacterListComponent } from './character-list/character-list.component';
+import { CharacterDetailComponent } from './character-detail/character-detail.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    CharacterListComponent,
+    CharacterDetailComponent
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MaterialModule
   ]
 })
 export class MainModule { }

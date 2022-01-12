@@ -11,7 +11,7 @@ export class CharactersService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCharacters() {
-    return this.http.get(`${this.url}characters?`)
+  getAllCharacters(orderBy: string = 'name') {
+    return this.http.get(`${this.url}characters?orderBy=${orderBy}`)
   }
 }

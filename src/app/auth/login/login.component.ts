@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
     public route: Router
   ) {
     this.form = this.formBuilder.group({
-      publickey: ['5a237863b3cc2061003cbbc4fe20dc06', [Validators.required, Validators.minLength(30)]],
-      privatekey: ['fbf255068eccea6d0ef951b9f25626b57ab2fe72', [Validators.required, Validators.minLength(40)]]
+      publickey: ['682c86afd1be028aec17acd6da617822', [Validators.required, Validators.minLength(30)]],
+      privatekey: ['d30f4b883ca72fe14cbbdbfab4ed073eb1b17127', [Validators.required, Validators.minLength(40)]]
     })
   }
 
