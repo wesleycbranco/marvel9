@@ -3,7 +3,7 @@
     flex-direction: column;
     max-width: 100%;
 
-    &__cards {
+    &__list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -13,12 +13,23 @@
         max-height: 150px;
         width: 300px;
         margin: 5px;
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 5px;
     }
 }
 
 .card {
-    background-color: #fff;
+    
     height: 150px;
-    width: 400px;
+    width: 300px;
     overflow-wrap: inherit;
+    margin: 5px;
+
+    &__description {
+        display: flex;
+        max-height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
