@@ -15,7 +15,6 @@ export class MainGuard implements CanLoad, CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
      const isLoged = this.tokenService.getIsLoged();
-    console.log(isLoged);
     if(!isLoged) {
       this.route.navigate(['autenticacao', 'login']);
     } else {
@@ -26,7 +25,6 @@ export class MainGuard implements CanLoad, CanActivate {
 
   canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     const isLoged = this.tokenService.getIsLoged();
-    console.log(isLoged);
     if(!isLoged) {
       this.route.navigate(['autenticacao', 'login']);
     }
