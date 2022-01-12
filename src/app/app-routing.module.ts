@@ -1,9 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "./core/guards/auth.guard";
+import { MainGuard } from "./core/guards/main.guard";
+import { NotFoundComponent } from "./shared/not-found/not-found.component";
 
 const routes: Routes = [
-    {path: '', loadChildren: () => import('./main/main.module').then(m => m.MainModule)},
+    {
+        path: 'main', 
+        loadChildren: () => import('./main/main.module').then(m => m.MainModule),
+        canLoad: [MainGuard]
+    },
     {
         path: 'autenticacao', 
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
@@ -11,7 +17,7 @@ const routes: Routes = [
     },
     {
         path: "**",
-        redirectTo: ''
+        component: NotFoundComponent
     }
 ]
 

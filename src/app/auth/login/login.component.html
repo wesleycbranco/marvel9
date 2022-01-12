@@ -11,7 +11,7 @@
                     <mat-label>Private KEY</mat-label>
                     <input matInput formControlName="privatekey" placeholder="cole aqui sua chave privada" >
                 </mat-form-field>
-                <button mat-raised-button class="login__button" (click)="logIn()" color="primary">Entrar</button>
+                <button mat-raised-button class="login__button" [disabled]="form.invalid" (click)="logIn()" color="primary">Entrar</button>
             </form>
         </div>
     </div>
