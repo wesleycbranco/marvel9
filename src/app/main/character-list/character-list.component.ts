@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharactersService } from 'src/app/core/http/characters.service';
 
 @Component({
@@ -12,13 +13,16 @@ export class CharacterListComponent implements OnInit {
   page: number = 0;
   orderBy: string = 'name'
 
-  constructor(private characterService: CharactersService) { }
+  constructor(
+    private characterService: CharactersService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.getResults(this.orderBy, this.page);
   }
 
-  getResults(orderBy: string = 'name', offset: number = 0): void {
+  private getResults(orderBy: string = 'name', offset: number = 0): void {
     this.characterService.getAllCharacters(orderBy, offset).subscribe((response: any) => {
       this.list = response.data.results
     })
@@ -38,6 +42,11 @@ export class CharacterListComponent implements OnInit {
       this.page++
       this.getResults(this.orderBy, this.page);
     }
+  }
+
+  openCharacter(id:number): void {
+    console.log(id)
+    this.router.navigate(['main', 'personagem', [`${id}`]]);
   }
 
 }

@@ -7,7 +7,7 @@
         </div>
     </div>
    <div class="list__list">
-        <div class="list__card" *ngFor="let item of list">
+        <div class="list__card" *ngFor="let item of list" (click)="openCharacter(item.id)">
             <div class="card">
                 <h3>{{item.name}}</h3>
                 <div class="card__description">
