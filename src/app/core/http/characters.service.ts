@@ -14,4 +14,12 @@ export class CharactersService {
   getAllCharacters(orderBy: string = 'name', offset: number = 0) {
     return this.http.get(`${this.url}characters?orderBy=${orderBy}&offset=${offset}`)
   }
+
+  getChar(id:string) {
+    return this.http.get(`${this.url}characters/${id}`);
+  }
+
+  getImage() {
+    
+  }
 }

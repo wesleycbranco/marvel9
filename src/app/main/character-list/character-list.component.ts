@@ -45,8 +45,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   openCharacter(id:number): void {
-    console.log(id)
-    this.router.navigate(['main', 'personagem', [`${id}`]]);
+    this.router.navigate(['main', 'personagem', `${id}`]);
   }
 
 }
